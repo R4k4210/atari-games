@@ -1,0 +1,25 @@
+--------------------------------------------------------------------------------
+-- Recordemos que tenemos que tener en /usr/local/bin el compilador dasm, sino
+-- no te lo va a dejar usar el binario
+--------------------------------------------------------------------------------
+
+Si queremos compilar el archivo con dasm, tenemos que tirar el siguiente comando,
+esto genera un archivo .bin de todos los .asm en formato 3 (f3).
+El v0 es el nivel de verbosidad, 0 es para solo mostrar errores.
+El nombre es ocart.bin.
+
+dasm *.asm -f3 -v0 -ocart.bin 
+
+Si queremos crear los archivos extras que utiliza el emulador de Atari, Stella, 
+podemos agregar lcart.lst y scart.sym.
+
+-dasm *.asm -f3 -v0 -ocart.bin -lcart.lst -scart.sym
+
+
+--------------------------------------------------------------------------------
+-- Extras
+--------------------------------------------------------------------------------
+
+Para decirle a linux que un archivo es ejecutable podemos hacer
+
+chmod +x archivo.bin
